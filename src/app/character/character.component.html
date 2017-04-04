@@ -1,0 +1,38 @@
+<h2>Fill this out to determine your character</h2>
+
+<div>
+  <label>Personality:</label>
+  <select #newPersonality>
+    <option [value]="1">Adventurous</option>
+    <option [value]="2">Quirky</option>
+    <option [value]="3">Book worm</option>
+  </select>
+  <br>
+
+  <label>Wizarding level:</label>
+  <select #newLevel>
+    <option [value]="1">Beginner</option>
+    <option [value]="2">Intermediate</option>
+    <option [value]="3">Expert</option>
+  </select>
+  <br>
+
+  <label>Gender</label>
+
+  <select #newGender>
+    <option [value]="1">Female</option>
+    <option [value]="2">Male</option>
+  </select>
+  <br>
+
+<input #newName type="hidden" name="name" value="">
+
+  <button (click)="submitForm(newPersonality.value, newLevel.value, newGender.value, newName.value)">Get your Wizard</button>
+
+  <div *ngIf="wizardSelected">
+    <p>You are {{wizardSelected.name}}!!</p>
+    <a routerLink="intro"><button>Play game</button></a>
+
+  </div>
+
+</div>
