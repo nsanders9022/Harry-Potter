@@ -9,6 +9,9 @@ import { routing } from './app.routing';
 import { IntroComponent } from './intro/intro.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
+import { EndComponent } from './end/end.component';
+import { TransfigureComponent } from './transfigure/transfigure.component';
+import { StupifyComponent } from './stupify/stupify.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -21,7 +24,10 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     CharacterComponent,
-    IntroComponent
+    IntroComponent,
+    EndComponent,
+    TransfigureComponent,
+    StupifyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Character } from '../character.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { CharacterService } from '../character.service';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   providers: [CharacterService]
 })
 
-export class CharacterComponent implements OnInit {
+export class CharacterComponent {
   characters: FirebaseListObservable<any[]>;
 
   @Output() newCharacterSender = new EventEmitter()
@@ -19,9 +19,9 @@ export class CharacterComponent implements OnInit {
 
   constructor(private router: Router, private characterService: CharacterService) { }
 
-  ngOnInit(){
-    this.characters = this.characterService.getCharacters();
-  }
+  // ngOnInit(){
+  //   this.characters = this.characterService.getCharacters();
+  // }
 
   submitForm(personality:string, level: string, gender: string, name: string) {
     var newCharacter: Character = new Character(personality, level, gender, name)

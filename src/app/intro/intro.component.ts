@@ -5,7 +5,6 @@ import { Story } from '../story.model';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 
-
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
@@ -14,7 +13,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class IntroComponent implements OnInit{
   characters: FirebaseListObservable<any[]>;
-  // 
+  //
   // characters: Character[];
   // stories: Story[];
 
@@ -22,7 +21,6 @@ export class IntroComponent implements OnInit{
 
   ngOnInit() {
     this.characters = this.characterService.getCharacters();
-    console.log(this.characters);
   }
 
   // goToStoryPage(clickedStory: Story) {
